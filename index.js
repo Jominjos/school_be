@@ -51,7 +51,8 @@ app.post("/api/student", (req, res) => {
 });
 
 app.put("/api/student", (req, res) => {
-  const sql = "UPDATE students SET name = ?,stu_id=?, class = ? WHERE id = ?";
+  const sql =
+    "UPDATE students SET name = ?,stu_id=?, stu_class = ? WHERE id = ?";
 
   db.query(
     sql,

@@ -43,7 +43,7 @@ app.post("/api/student", (req, res) => {
     req.body.stu_id,
     req.body.stu_class,
   ];
-
+  //hi
   const q = "INSERT INTO students ( name, stu_id, stu_class) VALUES (?,?,?)";
   db.query(q, [name, stu_id, stu_class], (err, data) => {
     res.json({ err, data });

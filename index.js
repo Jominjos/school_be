@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const dotenv = require("dotenv");
 
 dotenv.config();
@@ -20,10 +20,6 @@ const db = mysql.createConnection({
   password: process.env.PASSWORD,
   database: process.env.DATABASE,
   port: process.env.PORT,
-  connectionLimit: 10,
-  connectTimeout: 10000,
-  waitForConnections: true,
-  queueLimit: 0,
 });
 
 db.connect((err) => {

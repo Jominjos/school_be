@@ -15,11 +15,11 @@ app.use(
 );
 
 const db = mysql.createConnection({
-  host: process.env.HOST,
-  user: process.env.USER,
-  password: process.env.PASSWORD,
-  database: process.env.DATABASE,
-  port: process.env.PORT,
+  host: process.env.DBHOST,
+  user: process.env.DBUSER,
+  password: process.env.DBPASSWORD,
+  database: process.env.DBDATABASE,
+  port: process.env.DBPORT,
 });
 
 db.connect((err) => {
@@ -70,6 +70,7 @@ app.delete("/api/student", (req, res) => {
   });
 });
 
-app.listen("7001", () => {
+const port = process.env.PORT || 7001;
+app.listen(port, () => {
   console.log(`server is listening on port`);
 });
